@@ -5,7 +5,7 @@
 ## Mapfit REST APIS
 
 - [x] Directions [docs](https://docs.mapfit.com/docs/rest_directions-api)
-- [ ] Geocoding [docs](https://docs.mapfit.com/docs/rest_geocoding-api)
+- [x] Geocoding [docs](https://docs.mapfit.com/docs/rest_geocoding-api)
 
 ## Exemple
 

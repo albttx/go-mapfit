@@ -33,6 +33,20 @@ func TestMapfitDirections(t *testing.T) {
 	// _, err := mapfitClient.GetDirections(srcAddr, dstAddr, "driving")
 	_, err := mapfitClient.GetDirections(srcAddr, dstAddr, "walking")
 	if err != nil {
-		t.FailNow()
+		t.Fatal(err)
+	}
+}
+
+func TestMapfitGeocode(t *testing.T) {
+	mapfitClient := mapfit.NewClient(MapfitToken)
+
+	addr := mapfit.Address{
+		StreetAddress: "avenue des Champs Elysee",
+		Locality:      "Paris",
+	}
+
+	_, err := mapfitClient.Geocode(addr)
+	if err != nil {
+		t.Fatal(err)
 	}
 }
