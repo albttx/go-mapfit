@@ -20,10 +20,17 @@ dstAddr := mapfit.Address{
     Locality:      "Paris",
 }
 
-// _, err := mapfitClient.GetDirections(srcAddr, dstAddr, "driving")
-_, err := mapfitClient.GetDirections(srcAddr, dstAddr, "walking")
+// Directions API
+directions, err := mapfitClient.GetDirections(srcAddr, dstAddr, "driving")
 if err != nil {
     panic(err)
 }
-fmt.Printf("#%v\n", resp)
+fmt.Printf("%#v\n", directions)
+
+// Geocode API
+geocode, err := mapfitClient.Geocode(srcAddr)
+if err != nil {
+    panic(err)
+}
+fmt.Printf("%#v\n", geocode)
 ```
